@@ -21,7 +21,10 @@ Private Sub RegExInit(fMultiLine As Boolean, fGlobal As Boolean, fIgnoreCase As 
           
 End Sub
 
-
+''=== RegExTest ===
+'=RegExTest(<InputString>;<Pattern>;<ReturnWhenMatch>;<WhenNot>)
+'=RegExTest(A1;"ant";"OK";"wrong")
+'
 Public Function RegExTest(strData As String, Pattern As String, Macth As String, NoMatch As String) As String
     
     
@@ -38,6 +41,10 @@ Public Function RegExTest(strData As String, Pattern As String, Macth As String,
 
 End Function
 
+''=== RegExReplace ===
+'=RegExReplace(<InputString>;<Pattern>;<ReplaceString>)
+'=RegExReplace(A1;"a(.)t";"X$1X")
+'
 Public Function RegExReplace(strData As String, Pattern As String, Replace As String) As String
         
     RegExInit True, False, True
@@ -48,6 +55,10 @@ Public Function RegExReplace(strData As String, Pattern As String, Replace As St
 
 End Function
 
+''=== RegExMatch ===
+'=RegExMatch(<InputString>;<Pattern>;<ReturnWhenNotMatch>)
+'=RegExMatch(A1;"a(.)t";"-----")
+'
 Public Function RegExMatch(strData As String, Pattern As String, Default As String) As String
     
     Dim RegExMatches As Object
