@@ -41,15 +41,38 @@ End Function
 
 ''=== ExtractUntil ===
 
-Public Function ExtractUntil (txt As String, char As String)
+Public Function ExtractUntil (txt As String, char As String) As String
  
     Dim ii As Integer
     
     ii = InStr(1, txt, char)
     If (ii > 0) Then
-      ExtraerHasta = Left(txt, ii - 1)
+      ExtractUntil = Left(txt, ii - 1)
     Else
-      ExtraerHasta = txt
+      ExtractUntil = txt
     End If
     
+End Function
+
+
+''=== ExtractBetween ===
+
+Public Function ExtractBetween(txt As String, ini As String, fin As String, dft As String) As String
+
+    Dim ii As Integer, fi As Integer
+   
+    ii = InStr(1, txt, ini)
+    If (ii > 0) Then
+      ExtractBetween = Mid(txt, ii - 1)
+    Else
+      ExtractBetween = txt
+    End If
+   
+    ii = InStr(1, txt, char)
+    If (ii > 0) Then
+      ExtractBetween = Left(txt, ii - 1)
+    Else
+      ExtractBetween = txt
+    End If
+   
 End Function
